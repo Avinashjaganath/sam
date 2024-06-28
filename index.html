@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Attendence</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <!-- Include any other Firebase modules you need (e.g., firebase-auth.js for authentication) -->
+   
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="nav_logo">Smart Attendence</a>
+
+        <!--Navigation item-->
+        <ul class="nav_items">
+          <li class="nav_item">
+            <a href="#" class="nav_link" onclick="touch()">About</a>
+            <a href="#" class="nav_link">Help</a>
+          </li>
+        </ul>
+
+        <button class="button" id="form-open">Login</button>
+      </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="home">
+      <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+        <!-- Login From -->
+        <div class="form login_form">
+          <form id="LoginForm">
+            <h2 id="loginpe">Login</h2>
+
+            <div>
+              <input type="image" name="login_person" id="a" onclick="final('Admin List')" src="admin.jpg" alt="Admin">
+              <input type="image" name="login_person" id="P" onclick="final('Parents List')" src="parent.png" alt="Parents" >
+              <input type="image" name="login_person" id="T" onclick="final('Teachers List')" src="teacher.jpg" alt="Teachers" >
+            </div>
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" id="login_email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" minlength="10" placeholder="Enter your password" id="login_password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+            <div class="input_box" >
+              <i class="uil-panorama-v"></i>
+              <input type="text" id="secrt" minlength="12" placeholder="Admin Unique Code" required>
+            </div>
+            <div class="option_field">
+              <a onclick="forget()" class="forgot_pw" style="margin-left:60%;">Forgot password?</a>
+            </div>
+              <button class="button" type="submit">Login Now</button>
+              <center><p id="loginStatus"></p></center>
+            <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+          </form>
+        </div>
+
+        <!-- Signup From -->
+        <div class="form signup_form">
+          <form id="registerForm">
+            <h2 id="regi">Sign Up</h2>
+            
+            <div>
+              <input type="image" name="login_person" id="a" onclick="final('Admin List')" src="admin.jpg" alt="Admin" >
+              <input type="image" name="login_person" id="T" onclick="final('Teachers List')"src="teacher.jpg" alt="Teachers" >
+              <input type="image" name="login_person" id="P" onclick="final('Parents List')"src="parent.png" alt="Parents" >
+            </div>
+            <div class="input_box">
+              <i class="uil uil-coronavirus"></i>
+              <input type="text" placeholder="Enter Name" id="name" />
+            </div>
+            <div class="input_box">
+              <i class="uil uil-envelope-alt email"></i>
+              <input type="email" placeholder="Enter your email" id="email"required />
+            </div>
+            <div class="input_box">
+              <i class="uil uil-eye-slash pw_hide"></i>
+              <input type="password" minlength="10" placeholder="Create password" id="password" required />
+              <i class="uil uil-lock password"></i>
+            </div>
+            <div class="input_box">
+              <i class="uil uil-eye-slash pw_hide"></i>
+              <input type="password" minlength="10" placeholder="Confirm password" id="confirm" required />
+              <i class="uil uil-lock password"></i> 
+            </div>  
+            <div class="input_box">
+              <i class="uil uil-ninja"></i>
+              <input type="text" placeholder="Enter College/School Name " id="college">
+            </div>
+
+            <button class="button" type="submit">Signup Now</button>
+
+            <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+          </form>
+        </div>
+      </div>
+      <div id="about">
+        <h2>About Our Project</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae earum rem voluptates tenetur omnis quis, nobis nam repellendus eaque culpa officia doloribus modi, quam ducimus inventore autem qui minus.</p>
+      </div>
+    </section>    
+
+    <script src="script.js"></script>
+    
+  </body>
+</html>
